@@ -1,5 +1,35 @@
 This script is for extracting and transcribing audio files from .mp4 video files into .srt formatted text files for subtitling purposes using Googles Speech-to-Text and Google Cloud Storage APIs. It outputs both a raw text transcription and a .srt formatted version. In the current version, this script requires you to authenticate your Google credentials through the gcloud CLI and also requires that you have ffmpeg installed locally on your machine (for video to audio conversion and compression)
 
+## Polytopal Use Instructions for macOS
+
+Make sure to have homebrew installed [from their instructions](http://brew.sh)
+
+Make sure to install the following things:
+```bash
+brew install ffmpeg
+pip install mkvenv
+mkvenv
+```
+
+You should see an option to install the requirements from  `requirements.txt`. Go ahead and do that. If you don't see that option, just run:
+
+```bash
+pip install -r requirements.txt
+```
+
+Then go ahead and download your json certificate (ask Abhay) to your root of the directory.
+
+Place your `.mp4` files into the `Interviews` folder for processing.
+
+Then, execute the command to start the transcription:
+
+```bash
+python autorun.py Interviews/
+```
+
+The transcription should start up. It takes a while, around 30s per 1m of video, so for a 1 hour video it would take 30 minutes to transcribe. You can use a tool like [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12) to keep your computer from sleeping while it works.
+
+## Old Instructions
 Instructions for use
 
 Use the Cloud Platform Console to create a new Cloud
